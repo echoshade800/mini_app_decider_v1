@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "EXPO_NO_TELEMETRY=1 expo start",
     "build:web": "expo export --platform web",
-    "build:ios": "expo build:ios",
+    "build:ios": "npx react-native bundle --platform ios --dev false --entry-file index.tsx --bundle-output ios/rnbundle/main.jsbundle --assets-dest ios",
     "build:android": "expo build:android",
+    "deploy:ios": "sh deploy_ios.sh",
     "lint": "expo lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
     "@expo/vector-icons": "^14.1.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-navigation/bottom-tabs": "^7.2.0",
@@ -41,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@react-native-community/cli": "latest",
     "typescript": "~5.8.3",
     "@types/react": "~19.0.10"
   }
