@@ -72,7 +72,6 @@ export default function ProfileScreen() {
         <View style={styles.settingTextContainer}>
           <Text style={styles.settingTitle}>{title}</Text>
           {subtitle && <Text style={styles.settingSubtitle}>{subtitle}</Text>}
-          }
         </View>
       </View>
       {rightComponent}
